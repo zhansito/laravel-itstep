@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HWController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,14 @@ Route::get('/user/dashboard', function(){
 
 Route::get('/users/all', [HomeController::class, 'get_all_users']);
 Route::get('/users/store', [HomeController::class, 'user_store']);
+
+
+/// HW #15
+//1.1
+//Route::get('/plus/{a}/{b}', [HWController::class, 'plus']);
+Route::get('/plus/{a}/{b}', [HomeController::class, 'plus']);
+
+//1.2
+//Route::get('/multiply/{a}/{b}', [HWController::class, 'multiply']);
+Route::get('/multiply/{a}/{b}', [HomeController::class, 'multiply']);
+Route::get('/multiply/{a}', [HomeController::class, 'multiplyDefault']);

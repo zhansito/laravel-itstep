@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class HWController extends Controller
+{
+    public function plus(int $a, int $b)
+    {
+        $c = $a + $b;
+        echo $c;
+    }
+
+    public function multiply(int $a, int $b)
+    {
+        $c = $a + $b;
+        echo $c;
+    }
+}

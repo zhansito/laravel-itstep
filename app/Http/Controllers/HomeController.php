@@ -48,4 +48,22 @@ class HomeController extends Controller
         
         return redirect()->to('/users/all');
     }
+
+    public function plus(int $a, int $b)
+    {
+        $c = $a + $b;
+        echo $c;
+    }
+
+    public function multiply(int $a, int $b)
+    {
+        $c = $a * $b;
+        echo $c;
+    }
+
+    public function multiplyDefault(int $a)
+    {
+        $c = $a * 10;
+        echo $c;
+    }
 }
