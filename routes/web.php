@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\HWController;
 
 /*
@@ -24,26 +25,21 @@ Route::get('/about', function (){
     return view('pages.info.about');
 })->name('info.about');
 
-Route::get('/login', function(){
-    return redirect()->route('home');
-})->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'auth']);
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/user/dashboard', [UserController::class, 'dashboard'])
+    ->middleware('auth')
+    ->name('user.dashboard');
 
 Route::get('/contacts', function(){
     return view('pages.contacts.contacts');
 })->name('contacts.contacts');
 
-Route::get('/users/{id?}', function ($id = 0){
-    return "<h1>User: ".$id."</h1>";
-});
-
-Route::get('/users/{id?}', [HomeController::class, 'get_user'])
-    ->where('id', '[0-9]+');
-
-Route::get('/user/dashboard', function(){
-    return "user dashboard";
-})
-->middleware('auth')
-->name('user.dashboard');
+Route::get('/users/{id?}', [UserController::class, 'get_user'])
+    ->where('id', '[0-9]+')
+    ->name('user.show');
 
 Route::get('/users/all', [HomeController::class, 'get_all_users']);
 Route::get('/users/store', [HomeController::class, 'user_store']);

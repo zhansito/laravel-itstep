@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('page_title', 'OnlineStore')</title>
-    <link rel="stylesheet" href="" />
+    {{-- <link rel="stylesheet" href="http://laravel.itstep.kz:8080/_css/tailwind.css" /> --}}
+    <link rel="stylesheet" href="{{ asset('/_css/tailwind.css') }}" />
     <style>
         *{margin: 10; padding: 0}
     </style>

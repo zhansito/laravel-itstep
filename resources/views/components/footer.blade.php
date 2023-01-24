@@ -1,3 +1,1 @@
-<div>
-    footer
-</div>
+<div class="w-full py-16 bg-gray-700 flex justify-center">footer</div>

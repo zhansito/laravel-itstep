@@ -13,7 +13,7 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('items');
+        //Schema::dropIfExists('items');
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('title');
